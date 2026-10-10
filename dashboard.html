@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Dashboard | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="dashboard.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">Member Dashboard</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="achievements.html">My Achievements</a></li>
+        <li><a href="alumni.html">Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="logout-btn" class="btn btn-outline-danger btn-sm">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 2.5rem 0;">
+    <div class="container">
+
+      <!-- Welcome Banner -->
+      <section class="dash-banner">
+        <div class="dash-user-info">
+          <img src="assets/images/avatar-default.svg" id="dash-user-avatar" alt="Avatar" class="dash-avatar" onerror="this.src='assets/images/avatar-default.svg'">
+          <div>
+            <h1 class="dash-greeting">Welcome back, <span id="dash-user-name">Alumni</span>!</h1>
+            <p class="dash-subtext" id="dash-user-subtext">Loading profile details...</p>
+          </div>
+        </div>
+
+        <div class="dash-quick-actions">
+          <a href="profile.html" class="btn btn-accent btn-sm">View &amp; Edit Profile</a>
+          <a href="achievements.html" class="btn btn-secondary btn-sm">+ Add Achievement</a>
+        </div>
+      </section>
+
+      <!-- Profile Completion Card -->
+      <section class="completion-card">
+        <div class="completion-header">
+          <h2 class="completion-title">Profile Completion Status</h2>
+          <span class="completion-percent" id="profile-completion-pct">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="profile-completion-bar" style="width: 0%;"></div>
+        </div>
+        <p class="completion-tip" id="profile-completion-tip">
+          Keep your alumni record up-to-date to maximize networking opportunities and event invitations.
+        </p>
+      </section>
+
+      <!-- Dashboard Cards Section -->
+      <section style="margin-bottom: 3rem;">
+        <h2 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Explore Features</h2>
+
+        <div class="grid-3">
+          
+          <!-- Card: My Profile -->
+          <a href="profile.html" class="card dash-card">
+            <div>
+              <div class="dash-card-icon" style="background: #eff6ff; color: #2563eb;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h3 class="dash-card-title">My Profile</h3>
+              <p class="dash-card-desc">View and update your personal information, contact info, job role, and company.</p>
+            </div>
+            <div class="dash-card-link">Update Profile &rarr;</div>
+          </a>
+
+          <!-- Card: Achievements -->
+          <a href="achievements.html" class="card dash-card">
+            <div>
+              <div class="dash-card-icon" style="background: #fffbeb; color: #d97706;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="dash-card-title">My Achievements</h3>
+              <p class="dash-card-desc">Add awards, milestones, honors, promotions, and certificates to your portfolio.</p>
+            </div>
+            <div class="dash-card-link">Manage Achievements &rarr;</div>
+          </a>
+
+          <!-- Card: Upcoming Events -->
+          <a href="events.html" class="card dash-card">
+            <div>
+              <div class="dash-card-icon" style="background: #ecfdf5; color: #059669;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <h3 class="dash-card-title">Upcoming Events</h3>
+              <p class="dash-card-desc">Browse upcoming reunions, alumni webinars, hackathons, and networking dinners.</p>
+            </div>
+            <div class="dash-card-link">Explore Events &rarr;</div>
+          </a>
+
+          <!-- Card: Job Opportunities -->
+          <a href="jobs.html" class="card dash-card">
+            <div>
+              <div class="dash-card-icon" style="background: #f5f3ff; color: #7c3aed;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <h3 class="dash-card-title">Job Opportunities</h3>
+              <p class="dash-card-desc">Discover careers and internships posted by fellow alumni and partner organizations.</p>
+            </div>
+            <div class="dash-card-link">View Jobs &rarr;</div>
+          </a>
+
+          <!-- Card: Announcements -->
+          <a href="announcements.html" class="card dash-card">
+            <div>
+              <div class="dash-card-icon" style="background: #fff1f2; color: #e11d48;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <h3 class="dash-card-title">Announcements</h3>
+              <p class="dash-card-desc">Read important official college notices, updates, and association bulletins.</p>
+            </div>
+            <div class="dash-card-link">Read Notices &rarr;</div>
+          </a>
+
+          <!-- Card: Alumni Directory -->
+          <a href="alumni.html" class="card dash-card">
+            <div>
+              <div class="dash-card-icon" style="background: #eff6ff; color: #0284c7;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="dash-card-title">Alumni Directory</h3>
+              <p class="dash-card-desc">Search and connect with other alumni across companies, departments, and years.</p>
+            </div>
+            <div class="dash-card-link">Search Directory &rarr;</div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Previews Row: Events & Announcements -->
+      <div class="grid-2">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="font-size: 1.2rem; margin: 0;">Upcoming Events</h3>
+            <a href="events.html" style="font-size: 0.88rem; font-weight: 600;">View All &rarr;</a>
+          </div>
+          <div id="dash-events-preview">
+            <!-- Dynamically loaded -->
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="font-size: 1.2rem; margin: 0;">Recent Announcements</h3>
+            <a href="announcements.html" style="font-size: 0.88rem; font-weight: 600;">View All &rarr;</a>
+          </div>
+          <div id="dash-announcements-preview">
+            <!-- Dynamically loaded -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="padding: 2rem 0;">
+    <div class="container text-center" style="font-size: 0.88rem; color: #94a3b8;">
+      &copy; 2026 Online Alumni Management System. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

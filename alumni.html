@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Directory | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">University Alumni Association</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="alumni.html" class="active">Alumni Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions" id="nav-auth-actions">
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Header Banner -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, #1e4976 100%); color: #ffffff; padding: 3.5rem 0;">
+      <div class="container text-center">
+        <h1 style="color: #ffffff; font-size: 2.5rem; margin-bottom: 0.75rem;">Alumni Directory</h1>
+        <p style="color: #cbd5e1; max-width: 650px; margin: 0 auto; font-size: 1.1rem;">
+          Discover and connect with graduates across departments, industries, and worldwide locations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search & Filters Toolbar -->
+    <section class="section" style="padding-top: 2.5rem;">
+      <div class="container">
+        
+        <div class="filter-toolbar">
+          <div class="filter-grid">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="search-input" class="form-label">Search Directory</label>
+              <input type="text" id="search-input" class="form-control" placeholder="Search by name, company, or city...">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="filter-department" class="form-label">Department</label>
+              <select id="filter-department" class="form-select">
+                <option value="">All Departments</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="filter-year" class="form-label">Class Year</label>
+              <select id="filter-year" class="form-select">
+                <option value="">All Years</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="filter-degree" class="form-label">Degree</label>
+              <select id="filter-degree" class="form-select">
+                <option value="">All Degrees</option>
+              </select>
+            </div>
+
+            <div>
+              <button type="button" id="reset-filters-btn" class="btn btn-secondary btn-block" style="height: 42px;">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.35rem; margin: 0;">Registered Graduates</h2>
+          <span class="badge badge-primary" id="alumni-count-badge" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">
+            Loading...
+          </span>
+        </div>
+
+        <!-- Dynamic Alumni Cards Grid -->
+        <div id="alumni-grid">
+          <!-- Populated by js/alumni.js -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- View Profile Modal Dialog -->
+  <div class="modal-overlay" id="alumni-detail-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Alumni Profile Details</h3>
+        <button type="button" class="modal-close-btn" id="close-alumni-detail-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; gap: 1.75rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap;">
+          <img src="assets/images/avatar-default.svg" id="modal-avatar" alt="Avatar" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border);">
+          <div>
+            <h2 id="modal-name" style="margin-bottom: 0.25rem;">Jane Doe</h2>
+            <p id="modal-headline" style="color: var(--secondary); font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem;">Software Engineer</p>
+            <p id="modal-location" style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Location</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.75rem; background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md);">
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Department</span>
+            <div id="modal-dept" style="font-weight: 600;">Computer Science</div>
+          </div>
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Degree</span>
+            <div id="modal-degree" style="font-weight: 600;">B.Tech</div>
+          </div>
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Graduation Year</span>
+            <div id="modal-year" style="font-weight: 600;">Class of 2022</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 0.5rem;">About / Biography</h4>
+          <p id="modal-bio" style="color: var(--text-muted); line-height: 1.7;">Bio content here...</p>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="#" id="modal-linkedin" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm" style="display: none;">
+            🔗 View LinkedIn Profile
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('alumni-detail-modal').classList.remove('active');">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center" style="padding-bottom: 2rem;">
+      <p style="font-size: 0.88rem; color: #94a3b8;">&copy; 2026 Online Alumni Management System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/alumni.js"></script>
+</body>
+</html>

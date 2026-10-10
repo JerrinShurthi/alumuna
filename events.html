@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Events | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">University Alumni Association</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="alumni.html">Alumni Directory</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions" id="nav-auth-actions">
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, #1e4976 100%); color: #ffffff; padding: 3.5rem 0;">
+      <div class="container text-center">
+        <h1 style="color: #ffffff; font-size: 2.5rem; margin-bottom: 0.75rem;">Alumni Events & Reunions</h1>
+        <p style="color: #cbd5e1; max-width: 650px; margin: 0 auto; font-size: 1.1rem;">
+          Connect in person and online through webinars, campus homecomings, career workshops, and social galas.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+          <h2 style="font-size: 1.4rem; margin: 0;">Scheduled Events</h2>
+          <span class="text-muted" style="font-size: 0.9rem;">Updated live from database</span>
+        </div>
+
+        <div id="events-container">
+          <!-- Populated dynamically by js/events.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Event Detail & RSVP Modal -->
+  <div class="modal-overlay" id="event-detail-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Event Information</h3>
+        <button type="button" class="modal-close-btn" id="close-event-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/event-placeholder.svg" id="modal-event-img" alt="Event" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
+        <h2 id="modal-event-title" style="margin-bottom: 0.5rem; font-size: 1.4rem;">Event Title</h2>
+        <p id="modal-event-desc" style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">Event description...</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 0.6rem; background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); font-size: 0.92rem;">
+          <div>📅 <strong>Date:</strong> <span id="modal-event-date">TBA</span></div>
+          <div>⏰ <strong>Time:</strong> <span id="modal-event-time">TBA</span></div>
+          <div>📍 <strong>Venue:</strong> <span id="modal-event-venue">TBA</span></div>
+          <div>🏢 <strong>Organizer:</strong> <span id="modal-event-organizer">Alumni Association</span></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('event-detail-modal').classList.remove('active');">Close</button>
+        <button type="button" class="btn btn-primary" id="rsvp-event-btn">Register / RSVP</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center" style="padding-bottom: 2rem;">
+      <p style="font-size: 0.88rem; color: #94a3b8;">&copy; 2026 Online Alumni Management System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/events.js"></script>
+</body>
+</html>

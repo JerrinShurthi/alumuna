@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">University Alumni Association</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="alumni.html">Alumni Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-outline-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <img src="assets/images/logo.svg" alt="University Crest" class="auth-logo">
+        <h2 class="auth-title">Welcome Back</h2>
+        <p class="auth-subtitle">Sign in to your Alumni Association account</p>
+      </div>
+
+      <div class="auth-body">
+        <div id="auth-error-banner" class="auth-error-banner" role="alert"></div>
+
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label for="email" class="form-label required">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="alumni@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label required">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+          </div>
+
+          <div class="auth-extra-links">
+            <div></div>
+            <a href="#" id="forgot-password-link" style="font-weight: 500;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" id="login-submit-btn" class="btn btn-primary btn-block btn-lg">
+            Login
+          </button>
+        </form>
+      </div>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html" class="fw-bold">Create Account</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal-overlay" id="forgot-password-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Reset Password</h3>
+        <button type="button" class="modal-close-btn" id="close-forgot-modal">&times;</button>
+      </div>
+      <form id="forgot-password-form">
+        <div class="modal-body">
+          <p class="modal-desc" style="color: var(--text-muted); margin-bottom: 1.25rem;">
+            Enter your registered email address below. We'll send you an official Firebase password reset link.
+          </p>
+          <div class="form-group">
+            <label for="reset-email" class="form-label required">Your Email Address</label>
+            <input type="email" id="reset-email" class="form-control" placeholder="alumni@example.com" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancel-forgot-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="send-reset-btn">Send Reset Link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer" style="padding: 2rem 0;">
+    <div class="container text-center" style="font-size: 0.88rem; color: #94a3b8;">
+      &copy; 2026 Online Alumni Management System. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="dashboard.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">Member Profile</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html" class="active">My Profile</a></li>
+        <li><a href="achievements.html">My Achievements</a></li>
+        <li><a href="alumni.html">Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="logout-btn" class="btn btn-outline-danger btn-sm">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 2.5rem 0;">
+    <div class="container">
+
+      <!-- Profile Header Card -->
+      <section class="profile-header-card">
+        <div class="profile-avatar-container">
+          <img src="assets/images/avatar-default.svg" id="profile-avatar-display" alt="Profile Picture" class="profile-large-avatar" onerror="this.src='assets/images/avatar-default.svg'">
+          <div>
+            <h1 id="profile-name-display" style="font-size: 2rem; margin-bottom: 0.25rem;">Loading Name...</h1>
+            <p id="profile-headline-display" style="color: var(--secondary); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem;">Professional Role</p>
+            <p id="profile-location-display" style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">📍 Location</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#" id="profile-linkedin-link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: none;">
+            🔗 LinkedIn Profile
+          </a>
+          <button type="button" id="open-edit-modal-btn" class="btn btn-primary btn-sm">
+            ✏️ Edit Profile
+          </button>
+        </div>
+      </section>
+
+      <!-- Profile Details Grid -->
+      <section class="profile-details-grid">
+        
+        <!-- 1. Personal & Contact Card -->
+        <div class="card profile-detail-card">
+          <h2 style="font-size: 1.2rem; margin-bottom: 1.25rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">
+            👤 Personal &amp; Contact Info
+          </h2>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Email Address:</span>
+            <span class="profile-info-value" id="view-email">Loading...</span>
+          </div>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Phone:</span>
+            <span class="profile-info-value" id="view-phone">Loading...</span>
+          </div>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Gender:</span>
+            <span class="profile-info-value" id="view-gender">Loading...</span>
+          </div>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Date of Birth:</span>
+            <span class="profile-info-value" id="view-dob">Loading...</span>
+          </div>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Location:</span>
+            <span class="profile-info-value" id="view-location">Loading...</span>
+          </div>
+        </div>
+
+        <!-- 2. Academic Information Card -->
+        <div class="card profile-detail-card">
+          <h2 style="font-size: 1.2rem; margin-bottom: 1.25rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">
+            🎓 Academic Background
+          </h2>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Department:</span>
+            <span class="profile-info-value" id="view-department">Loading...</span>
+          </div>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Degree:</span>
+            <span class="profile-info-value" id="view-degree">Loading...</span>
+          </div>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Graduation Year:</span>
+            <span class="profile-info-value" id="view-grad-year">Loading...</span>
+          </div>
+        </div>
+
+        <!-- 3. Career Information Card -->
+        <div class="card profile-detail-card">
+          <h2 style="font-size: 1.2rem; margin-bottom: 1.25rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">
+            💼 Career &amp; Employment
+          </h2>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Company:</span>
+            <span class="profile-info-value" id="view-company">Loading...</span>
+          </div>
+          <div class="profile-info-row">
+            <span class="profile-info-label">Current Role:</span>
+            <span class="profile-info-value" id="view-position">Loading...</span>
+          </div>
+        </div>
+
+        <!-- 4. Bio Card (Span Full Width) -->
+        <div class="card profile-detail-card" style="grid-column: 1 / -1;">
+          <h2 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">
+            📝 About / Biography
+          </h2>
+          <p id="view-bio" style="color: var(--text-muted); line-height: 1.8; margin: 0; font-size: 0.98rem;">
+            No biography provided yet. Click "Edit Profile" to share your journey!
+          </p>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Edit Profile Modal Dialog -->
+  <div class="modal-overlay" id="edit-profile-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Your Alumni Profile</h3>
+        <button type="button" class="modal-close-btn" id="close-edit-modal">&times;</button>
+      </div>
+
+      <form id="edit-profile-form">
+        <div class="modal-body">
+          
+          <div class="avatar-preview-box">
+            <img src="assets/images/avatar-default.svg" id="edit-avatar-preview" alt="Avatar" class="avatar-preview-img">
+            <div>
+              <label for="edit-avatar-input" class="form-label">Update Profile Picture</label>
+              <input type="file" id="edit-avatar-input" accept="image/*" class="form-control" style="font-size: 0.85rem;">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName" class="form-label required">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gender" class="form-label">Gender</label>
+              <select id="gender" name="gender" class="form-select">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other / Prefer not to say</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="dob" class="form-label">Date of Birth</label>
+              <input type="date" id="dob" name="dob" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="location" class="form-label">Location (City, Country)</label>
+              <input type="text" id="location" name="location" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="department" class="form-label required">Department</label>
+              <select id="department" name="department" class="form-select" required>
+                <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Arts & Humanities">Arts &amp; Humanities</option>
+                <option value="Bio-Technology">Bio-Technology</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="degree" class="form-label required">Degree</label>
+              <select id="degree" name="degree" class="form-select" required>
+                <option value="B.Tech / B.E.">B.Tech / B.E.</option>
+                <option value="M.Tech / M.E.">M.Tech / M.E.</option>
+                <option value="B.S. / B.Sc">B.S. / B.Sc</option>
+                <option value="M.S. / M.Sc">M.S. / M.Sc</option>
+                <option value="BBA">BBA</option>
+                <option value="MBA">MBA</option>
+                <option value="Ph.D.">Ph.D.</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="graduationYear" class="form-label required">Graduation Year</label>
+              <input type="number" id="graduationYear" name="graduationYear" class="form-control" required min="1960" max="2032">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company" class="form-label">Current Company</label>
+              <input type="text" id="company" name="company" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="jobPosition" class="form-label">Job Position</label>
+              <input type="text" id="jobPosition" name="jobPosition" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="linkedin" class="form-label">LinkedIn Profile URL</label>
+            <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="https://linkedin.com/in/username">
+          </div>
+
+          <div class="form-group">
+            <label for="bio" class="form-label">Professional Bio</label>
+            <textarea id="bio" name="bio" class="form-control" rows="4"></textarea>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancel-edit-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-profile-btn">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer" style="padding: 2rem 0;">
+    <div class="container text-center" style="font-size: 0.88rem; color: #94a3b8;">
+      &copy; 2026 Online Alumni Management System. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>

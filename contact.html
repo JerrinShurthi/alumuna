@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Feedback | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">University Alumni Association</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="alumni.html">Alumni Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions" id="nav-auth-actions">
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, #1e4976 100%); color: #ffffff; padding: 3.5rem 0;">
+      <div class="container text-center">
+        <h1 style="color: #ffffff; font-size: 2.5rem; margin-bottom: 0.75rem;">Contact & Feedback</h1>
+        <p style="color: #cbd5e1; max-width: 650px; margin: 0 auto; font-size: 1.1rem;">
+          Have questions, suggestions, or partnership ideas? Send a message directly to our Alumni Affairs team.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="align-items: start;">
+          
+          <!-- Contact Form Card -->
+          <div class="card" style="padding: 2.5rem;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Send a Message</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem;">
+              All submissions are stored directly in the database and reviewed by administrators.
+            </p>
+
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label required">Your Full Name</label>
+                <input type="text" id="contact-name" name="name" class="form-control" placeholder="John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label required">Your Email Address</label>
+                <input type="email" id="contact-email" name="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label required">Subject</label>
+                <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="e.g. Alumni Chapter Inquiry, Feedback, Reunion" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label required">Message</label>
+                <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-block btn-lg">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Details & Info Card -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="card" style="padding: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem;">Alumni Affairs Office</h3>
+              
+              <div style="display: flex; flex-direction: column; gap: 1.2rem; font-size: 0.95rem;">
+                <div style="display: flex; gap: 0.75rem;">
+                  <span style="font-size: 1.25rem;">📍</span>
+                  <div>
+                    <strong>Location</strong>
+                    <div style="color: var(--text-muted);">Main Campus, Block C, Alumni Affairs Center</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.75rem;">
+                  <span style="font-size: 1.25rem;">📧</span>
+                  <div>
+                    <strong>Email Inquiries</strong>
+                    <div><a href="mailto:alumni@university.edu">alumni@university.edu</a></div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.75rem;">
+                  <span style="font-size: 1.25rem;">📞</span>
+                  <div>
+                    <strong>Phone Support</strong>
+                    <div style="color: var(--text-muted);">+1 (555) 019-2834 / +1 (555) 019-2835</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.75rem;">
+                  <span style="font-size: 1.25rem;">🕒</span>
+                  <div>
+                    <strong>Office Hours</strong>
+                    <div style="color: var(--text-muted);">Monday – Friday: 9:00 AM – 5:00 PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding: 1.75rem; background: var(--bg-alt);">
+              <h4 style="margin-bottom: 0.5rem;">Need to Update Your Profile?</h4>
+              <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1rem;">
+                If you are a registered alumni seeking to update your current job or address, please login to your member dashboard.
+              </p>
+              <a href="login.html" class="btn btn-outline-primary btn-sm">Go to Member Login →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center" style="padding-bottom: 2rem;">
+      <p style="font-size: 0.88rem; color: #94a3b8;">&copy; 2026 Online Alumni Management System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/contact.js"></script>
+</body>
+</html>

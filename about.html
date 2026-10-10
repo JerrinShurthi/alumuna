@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">University Alumni Association</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="alumni.html">Alumni Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions" id="nav-auth-actions">
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, #1e4976 100%); color: #ffffff; padding: 4rem 0;">
+      <div class="container text-center">
+        <h1 style="color: #ffffff; font-size: 2.75rem; margin-bottom: 1rem;">About Our Alumni Association</h1>
+        <p style="color: #cbd5e1; max-width: 700px; margin: 0 auto; font-size: 1.15rem;">
+          Bridging the gap between nostalgic college memories and future professional excellence.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="margin-bottom: 3.5rem;">
+          <div class="card" style="padding: 2.5rem; border-top: 5px solid var(--secondary);">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+              <span style="font-size: 2rem;">🎯</span>
+              <h2 style="margin: 0; font-size: 1.6rem;">Our Mission</h2>
+            </div>
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+              To cultivate a vibrant, lifelong community of alumni by fostering meaningful engagement, supporting continuous professional learning, providing career opportunities, and promoting the ongoing development of our college and current students.
+            </p>
+          </div>
+
+          <div class="card" style="padding: 2.5rem; border-top: 5px solid var(--accent);">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+              <span style="font-size: 2rem;">🔭</span>
+              <h2 style="margin: 0; font-size: 1.6rem;">Our Vision</h2>
+            </div>
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+              To be an internationally recognized network of globally accomplished alumni who empower each other, inspire subsequent generations of leaders, and contribute innovatively to societal advancement and academic excellence.
+            </p>
+          </div>
+        </div>
+
+        <!-- Objectives -->
+        <div class="section-header">
+          <span class="section-subtitle">Core Pillars</span>
+          <h2 class="section-title">Our Strategic Objectives</h2>
+          <p class="section-desc">Guided by a dedication to foster lasting engagement and tangible mutual value.</p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom: 4rem;">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">1. Alumni Directory</h3>
+            <p class="feature-desc">Maintain an updated, searchable directory of graduates across departments, locations, and graduation years.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">2. Mentorship Programs</h3>
+            <p class="feature-desc">Connect accomplished industry veterans with recent graduates and undergraduates seeking career direction.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">3. Career Advancement</h3>
+            <p class="feature-desc">Provide direct access to verified job vacancies, internships, and recruiter connections within the alumni network.</p>
+          </div>
+        </div>
+
+        <!-- Importance of Networking -->
+        <div class="card" style="padding: 3rem; background: var(--bg-alt); border-radius: var(--radius-lg); margin-bottom: 3.5rem;">
+          <div style="max-width: 850px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 1.25rem;">The Power of Alumni Networking</h2>
+            <p style="font-size: 1.08rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+              Colleges and universities are much more than classrooms — they are the foundational roots of enduring professional ecosystems. By staying active in your alumni association, you tap into a trusted circle of innovators, executives, entrepreneurs, and researchers who share your alma mater roots.
+            </p>
+            <a href="register.html" class="btn btn-primary btn-lg">Join the Network Today</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0; text-align: center;">
+        <p>&copy; 2026 Online Alumni Management System. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Achievements | Online Alumni Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="dashboard.html" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="Alumni Crest" class="nav-brand-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Alumni Portal</span>
+          <span class="nav-brand-subtitle">My Portfolio</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="achievements.html" class="active">My Achievements</a></li>
+        <li><a href="alumni.html">Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="logout-btn" class="btn btn-outline-danger btn-sm">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 2.5rem 0;">
+    <div class="container">
+      
+      <!-- Top Action Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h1 style="font-size: 2rem; margin-bottom: 0.25rem;">My Achievements &amp; Honors</h1>
+          <p style="color: var(--text-muted); margin: 0;">Highlight your professional milestones, awards, patents, and recognitions.</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span class="badge badge-primary" id="achievements-count">0 Shared</span>
+          <button type="button" id="open-add-achievement-btn" class="btn btn-primary">
+            + Add Achievement
+          </button>
+        </div>
+      </div>
+
+      <!-- Achievements Grid Container -->
+      <div id="achievements-container">
+        <!-- Dynamically rendered by js/achievements.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Add / Edit Achievement Modal -->
+  <div class="modal-overlay" id="achievement-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="achievement-modal-title">Add New Achievement</h3>
+        <button type="button" class="modal-close-btn" id="close-achievement-modal">&times;</button>
+      </div>
+
+      <form id="achievement-form">
+        <input type="hidden" id="achievementId" name="achievementId" value="">
+        <input type="hidden" id="existingImageUrl" name="existingImageUrl" value="">
+
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="achieve-title" class="form-label required">Achievement / Award Title</label>
+            <input type="text" id="achieve-title" name="title" class="form-control" placeholder="e.g. Employee of the Year, Patent Granted, Best Paper Award" required>
+          </div>
+
+          <div class="form-group">
+            <label for="achieve-org" class="form-label required">Issuing Organization / Company</label>
+            <input type="text" id="achieve-org" name="organization" class="form-control" placeholder="e.g. IEEE, Google, Microsoft, University" required>
+          </div>
+
+          <div class="form-group">
+            <label for="achieve-date" class="form-label required">Date of Recognition</label>
+            <input type="date" id="achieve-date" name="date" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="achieve-desc" class="form-label required">Description</label>
+            <textarea id="achieve-desc" name="description" class="form-control" rows="4" placeholder="Briefly explain what you achieved and its significance..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="achievement-image-input" class="form-label">Certificate / Photo (Optional)</label>
+            <input type="file" id="achievement-image-input" accept="image/*" class="form-control" style="font-size: 0.85rem;">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancel-achievement-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-achievement-btn">Save Achievement</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer" style="padding: 2rem 0;">
+    <div class="container text-center" style="font-size: 0.88rem; color: #94a3b8;">
+      &copy; 2026 Online Alumni Management System. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/achievements.js"></script>
+</body>
+</html>
